@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kleeves Real Estate</title>
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f7f9f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #0f4d3d;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        background: linear-gradient(
+            rgb(0, 0, 0, 0.6),
+            rgb(0, 0, 0, 0.6)
+          ),
+          url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+        background-attachment: fixed;
+        transition: background-image 0.3s ease-in-out;
+      
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+          background-attachment: scroll;
+        }
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+
+    .button {
+      background-color: #0f4d3d;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      margin-top: 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #146c54;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 1rem;
+      color: #0f4d3d;
+    }
+
+    .modal-content label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .modal-content input,
+    .modal-content select,
+    .modal-content textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+      background-color: #0f4d3d;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #146c54;
+    }
+
+    .thank-you {
+      text-align: center;
+      color: #0f4d3d;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      z-index: 1001;
+      display: none;
+      text-align: center;
+    }
+
+    .popup button {
+      margin-top: 1rem;
+      background: #0f4d3d;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #0f4d3d;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Kleeves Logo" />
+    <h2>Kleeves Real Estate</h2>
+  </header>
+
+  <section class="hero">
+    <h1><span style="color: #f3f3ee">Find Your Dream Property with</span> <span style="color: #ffeb3b">Kleeves</span></h1>
+    <p style="color:#ffffff">Your trusted partner in finding the perfect home or investment.</p>
+    <button class="button" onclick="openModal('consultModal')">Schedule a Free Consultation</button>
+  </section>
+
+  <div id="consultModal" class="modal">
+    <div class="modal-content">
+      <h2>Book a Free Consultation</h2>
+      <form id="consultForm" action="https://formsubmit.co/kleeves.official@gmail.com" method="POST" onsubmit="showThankYouPopup(event)">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://kleeves.in">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="location">Preferred Location:</label>
+        <input type="text" id="location" name="location" />
+
+        <label for="budget">Budget:</label>
+        <select id="budget" name="budget">
+          <option>Upto ₹1 Cr</option>
+          <option>Upto ₹2 Cr</option>
+          <option>Upto ₹3 Cr</option>
+          <option>More than ₹3 Cr</option>
+        </select>
+
+        <label for="propertySize">Property Size:</label>
+        <select id="propertySize" name="propertySize">
+          <option>1 BHK</option>
+          <option>2 BHK</option>
+          <option>3 BHK</option>
+          <option>4 BHK</option>
+        </select>
+
+        <label for="type">Property Type:</label>
+        <select id="type" name="type">
+          <option>Apartment</option>
+          <option>Independent House</option>
+          <option>Plot</option>
+          <option>Commercial</option>
+        </select>
+
+        <label for="time">Preferred Time Slot:</label>
+        <input type="text" id="time" name="time" placeholder="e.g. Tomorrow 4 PM" />
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closeModal('consultModal')" style="margin-left:10px;background:#ccc;color:black;">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="thankYouPopup" class="popup">
+    <p>Thank you! We’ll reach out to you soon.</p>
+    <button onclick="closeThankYouPopup()">Close</button>
+  </div>
+
+  <section class="section">
+    <h2>Why Choose Kleeves?</h2>
+    <p>We are not just agents — we are your property partners. Whether you're a first-time buyer, investor, or someone looking to upgrade your lifestyle, Kleeves offers you the guidance, options, and transparency you need to make smart real estate decisions. Our mission is to provide clarity and confidence in every transaction.</p>
+  </section>
+
+  <section class="section" style="background-color:#e8f5e9">
+    <h2>What We Offer</h2>
+    <p>• Curated property listings that match your budget and needs<br>
+       • Free personal consultation calls with our expert team<br>
+       • Verified builder projects and resale properties<br>
+       • End-to-end support, including home loan assistance and site visits</p>
+  </section>
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  function showThankYouPopup(e) {
+    e.preventDefault();
+
+    const form = document.getElementById("consultForm");
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/kleeves.official@gmail.com", {
+      method: "POST",
+      headers: {
+        Accept: "application/json"
+      },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      form.reset();
+      closeModal('consultModal');
+      document.getElementById("thankYouPopup").style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "https://kleeves.in";
+      }, 2500);
+    })
+    .catch(error => {
+      alert("Submission failed: " + error.message);
+    });
+  }
+
+  function closeThankYouPopup() {
+    document.getElementById("thankYouPopup").style.display = "none";
+  }
+  </script>
+
+</body>
+
+</html>
+
+
