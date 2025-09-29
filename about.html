@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - K3M Housing Solutions LLP</title>
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #0f4d3d;
+            color: white;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-right: 1.5rem;
+        }
+        
+        .nav-links li {
+            margin-left: 1.2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .nav-links a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .apply-btn-nav {
+            background-color: #ff6b35;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        
+        .apply-btn-nav:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        /* Add padding to body to account for fixed header */
+        body {
+            padding-top: 70px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 0.8rem 1rem;
+                height: auto;
+                position: relative;
+                background: linear-gradient(to bottom, #0f4d3d 50%, #146c54 50%); /* Two-color background */
+            }
+            
+            /* Always show navigation on mobile */
+            nav {
+                width: 100%;
+                display: flex !important;
+                margin-top: 0.8rem;
+                justify-content: center;
+                background-color: #146c54; /* Bottom section color */
+            }
+            
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin: 0;
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 0.5rem 0.7rem;
+                font-size: 0.85rem;
+                white-space: nowrap;
+                background-color: rgba(255, 255, 255, 0.1); /* Subtle background for nav items */
+            }
+            
+            .apply-btn-nav {
+                display: inline-block;
+                text-align: center;
+                margin-top: 0;
+                margin-left: 10px;
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .logo-container {
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                width: 100%;
+                background-color: #0f4d3d; /* Top section color */
+            }
+            
+            body {
+                padding-top: 0;
+            }
+            
+            /* Adjust header height for mobile */
+            header {
+                height: auto;
+                min-height: 100px;
+            }
+        }
+        
+        /* For very small screens */
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 5px;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.6rem;
+            }
+            
+            .apply-btn-nav {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                margin-left: 5px;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            header {
+                padding: 0.6rem 1rem;
+            }
+        }
+        
+        /* About Us Section Styles */
+        .about-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* Company Overview */
+        .company-overview {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .overview-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .overview-content h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .overview-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #5d6d7e;
+            margin-bottom: 20px;
+        }
+        
+        .overview-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .overview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .overview-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Statistics Section */
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 60px 0;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Values Section */
+        .values-section {
+            margin: 80px 0;
+        }
+        
+        .values-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 50px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .value-card h4 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: #5d6d7e;
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 80px 0;
+        }
+        
+        .team-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 50px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-photo {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-photo img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .member-info h4 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .position {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .bio {
+            color: #5d6d7e;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 60px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .cta-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #3498db;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f4d3d, #146c54);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #ff6b35;
+            border-radius: 2px;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #ff6b35;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .company-overview {
+                flex-direction: column;
+            }
+            
+            .overview-content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .stats-section {
+                padding: 30px 0;
+            }
+            
+            .stat-item {
+                min-width: 150px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .values-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation for statistics counter */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stat-number.animated {
+            animation: countUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-text">K3M Housing Solutions LLP</div>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#consultModal" class="apply-btn-nav" onclick="openModal('consultModal')">Apply Now</a>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2>About Our Company</h2>
+                <p>Trusted by thousands for over a decade in financial solutions</p>
+            </div>
+
+            <!-- Company Overview -->
+            <div class="company-overview">
+                <div class="overview-content">
+                    <h3>Your Trusted Financial Partner</h3>
+                    <p>Founded in 2015, we have been providing reliable loan solutions to individuals and businesses. Our mission is to make financial assistance accessible, transparent, and tailored to your unique needs.</p>
+                    <p>With a customer-centric approach and cutting-edge technology, we've helped over 8,500 clients achieve their financial goals while maintaining the highest standards of service and integrity.</p>
+                </div>
+                <div class="overview-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Financial Planning">
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="8500">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="10">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="47">0</div>
+                    <div class="stat-label">Banking Partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">% Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="values-section">
+                <h3>Our Core Values</h3>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Trust & Transparency</h4>
+                        <p>We believe in clear communication and honest dealings with no hidden fees or surprises.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Customer First</h4>
+                        <p>Your financial well-being is our priority. We tailor solutions to your specific needs.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>We leverage technology to simplify processes and deliver faster, smarter solutions.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>Integrity</h4>
+                        <p>We uphold the highest ethical standards in all our operations and relationships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="team-section">
+                <h3>Meet Our Leadership</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://i.postimg.cc/wBNvG6DR/IMG-20250125-WA0002.jpg" alt="Sunil Kumar Pahwa">
+                        </div>
+                        <div class="member-info">
+                            <h4>Ajay Kumar</h4>
+                            <p class="position">Co-Founder</p>
+                            <p class="bio">Dynamic finance professional with 12 years of extensive experience in Home Loans, Business Loans, and Mortgage Loans. Skilled in loan execution, client relationship management, and end-to-end processing of secured and unsecured lending. Strong expertise in building and maintaining excellent rapport with Government and Private Banks as well as NBFCs.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://i.postimg.cc/MTcY4fd4/IMG-20250118-WA0002.jpg" alt="Ajay Kumar">
+                        </div>
+                        <div class="member-info">
+                            <h4>Sunil Kumar Pahwa</h4>
+                            <p class="position">Co-Founder (Ex-SBI Employee)</p>
+                            <p class="bio">A seasoned banking professional with over 30 years of experience at the State Bank of India (SBI), specializing in loan portfolio management and real estate assessment Demonstrates deep expertise in handling diverse loan products, including retail, SME and mortgage segments, with a strong track record of maintaining asset quality and portfolio growth.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://i.postimg.cc/YCKJyCCb/AISelect-20250928-011955-Linked-In.jpg" alt="Shivang Pahwa">
+                        </div>
+                        <div class="member-info">
+                            <h4>Shivang Pahwa</h4>
+                            <p class="position">Media Head</p>
+                            <p class="bio">With a background as an Audit Associate at KPMG, Shivang brings strong analytical and financial expertise to the housing and loans sector. His mix of corporate experience and creative strategy helps clients make informed financial decisions with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Join thousands of satisfied customers who have achieved their financial goals with our help.</p>
+                    <a href="contact.html" class="cta-button">Contact Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>K3M Housing Solutions LLP</h4>
+                    <p>Your trusted partner for all loan solutions. We make financial assistance accessible, transparent, and tailored to your unique needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <a href="services.html">Home Loans</a>
+                    <a href="services.html">Business Loans</a>
+                    <a href="services.html">Personal Loans</a>
+                    <a href="services.html">Loan Against Property</a>
+                    <a href="services.html">Car Loans</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> JMD Empire Square, MG Road, Sector-28, Gurugram, HR 122001</p>
+                    <p><i class="fas fa-phone"></i> +91 9911441301</p>
+                    <p><i class="fas fa-envelope"></i> sunil.pahwa301@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 K3M Housing Solutions LLP. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Statistics counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // Function to animate counting
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // Check if stats are in viewport and animate
+            function checkStats() {
+                statNumbers.forEach(stat => {
+                    if (isInViewport(stat) && !stat.classList.contains('animated')) {
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        animateValue(stat, 0, target, 2000);
+                        stat.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Initial check and scroll event listener
+            checkStats();
+            window.addEventListener('scroll', checkStats);
+        });
+    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1rem;
+            color: #0f4d3d;
+            text-align: center;
+        }
+
+        .modal-content label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+            font-weight: 500;
+            color: #0f4d3d;
+        }
+
+        .modal-content input,
+        .modal-content select,
+        .modal-content textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .modal-content input:focus,
+        .modal-content select:focus,
+        .modal-content textarea:focus {
+            outline: none;
+            border-color: #0f4d3d;
+            box-shadow: 0 0 0 2px rgba(15, 77, 61, 0.1);
+        }
+
+        .modal-content button {
+            background-color: #0f4d3d;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .modal-content button:hover {
+            background-color: #146c54;
+        }
+
+        .modal-content .cancel-btn {
+            background-color: #ccc;
+            color: black;
+            margin-left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .modal-content .cancel-btn:hover {
+            background-color: #aaa;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.25);
+            z-index: 1001;
+            display: none;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .popup p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #0f4d3d;
+        }
+
+        .popup button {
+            margin-top: 1rem;
+            background: #0f4d3d;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .popup button:hover {
+            background: #146c54;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Form Layout */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+            
+            .modal-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-column {
+                text-align: center;
+            }
+            
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Consultation Modal -->
+<div id="consultModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('consultModal')">&times;</span>
+        <h2>Loan Application</h2>
+        <form id="consultForm" action="https://formsubmit.co/kleeves.official@gmail.com" method="POST" onsubmit="showThankYouPopup(event)">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://k3mhousingllp.com">
+            <input type="hidden" name="_subject" value="New Loan Consultation Request">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required />
+                </div>
+            </div>
+
+            <label for="loan">Type Of Loan Required:</label>
+            <select id="loan" name="loan" required>
+                <option value="">Select Loan Type</option>
+                <option>Home Loan</option>
+                <option>Business Loan</option>
+                <option>Personal Loan</option>
+                <option>Loan Against Property</option>
+                <option>Education Loan</option>
+                <option>Car Loan</option>
+                <option>Other</option>
+            </select>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="amount">Loan Amount Required:</label>
+                    <input type="text" id="amount" name="amount" placeholder="e.g. 500000" />
+                </div>
+                <div class="form-group">
+                    <label for="Profession">Profession:</label>
+                    <select id="Profession" name="Profession" required>
+                        <option value="">Select Profession</option>
+                        <option>Salaried</option>
+                        <option>Self-Employed</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="income">Monthly Income:</label>
+            <input type="text" id="income" name="income" placeholder="e.g. 50000" />
+
+            <button type="submit">Submit Application</button>
+            <button type="button" class="cancel-btn" onclick="closeModal('consultModal')">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="popup">
+    <p>Thank you! We'll reach out to you soon.</p>
+    <button onclick="closeThankYouPopup()">Close</button>
+</div>
+
+<script>
+    // Modal Functions
+    function openModal(id) {
+        document.getElementById(id).style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                closeModal(modal.id);
+            }
+        });
+    }
+
+    // Form Submission
+    function showThankYouPopup(e) {
+        e.preventDefault();
+
+        const form = document.getElementById("consultForm");
+        const formData = new FormData(form);
+
+        // Simple validation
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.style.borderColor = 'red';
+            } else {
+                field.style.borderColor = '#ccc';
+            }
+        });
+
+        if (!isValid) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+
+        fetch("https://formsubmit.co/ajax/kleeves.official@gmail.com", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json"
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            form.reset();
+            closeModal('consultModal');
+            document.getElementById("thankYouPopup").style.display = "block";
+            
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        })
+        .catch(error => {
+            alert("Submission failed. Please try again or contact us directly.");
+            console.error('Error:', error);
+            
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
+    }
+
+    function closeThankYouPopup() {
+        document.getElementById("thankYouPopup").style.display = "none";
+    }
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal('consultModal');
+            closeThankYouPopup();
+        }
+    });
+
+    // Input formatting for numbers
+    document.addEventListener('DOMContentLoaded', function() {
+        const amountInput = document.getElementById('amount');
+        const incomeInput = document.getElementById('income');
+        
+        if (amountInput) {
+            amountInput.addEventListener('input', function() {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        }
+        
+        if (incomeInput) {
+            incomeInput.addEventListener('input', function() {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
