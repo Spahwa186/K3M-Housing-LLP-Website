@@ -824,9 +824,9 @@
                 
                 <div class="contact-form-container">
                     <h3>Send Us a Message</h3>
-                    <form id="contactForm" action="https://formsubmit.co/kleeves.official@gmail.com" method="POST" onsubmit="showThankYouPopup(event)">
+                    <form id="contactForm" action="https://formsubmit.co/kleeves.official@gmail.com" method="POST" onsubmit="showthankYouPopupLoan(event)">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="https://k3mhousingsolutions.com">
+                        <input type="hidden" name="_next" value="https://k3mhousingsolutions.com">
                         <input type="hidden" name="_subject" value="New Loan Consultation Request">
                         
                         <div class="form-group">
@@ -866,6 +866,12 @@
                     </form>
                 </div>
             </div>
+
+            <!-- Thank You Popup for THIS form -->
+<div id="thankYouPopupLoan" class="popup">
+    <p>Thank you! We'll reach out to you soon.</p>
+    <button onclick="closeThankYouPopupLoan()">Close</button>
+</div>
             
             <div class="map-section">
                 <h3>Find Us</h3>
@@ -1175,4 +1181,5 @@
 </body>
 
 </html>
+
 
