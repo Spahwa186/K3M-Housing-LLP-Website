@@ -1214,6 +1214,12 @@ function gtag_report_conversion(url) {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         });
+
+       // Redirect after 2 seconds (you can adjust timing)
+    setTimeout(() => {
+        window.location.href = "https://k3mhousingsolutions.com/thankyou";
+    }, 2000);
+       
     }
 
     function closeThankYouPopup() {
@@ -1253,6 +1259,7 @@ function gtag_report_conversion(url) {
 </body>
 
 </html>
+
 
 
 
