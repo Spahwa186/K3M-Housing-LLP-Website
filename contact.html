@@ -1177,36 +1177,7 @@ function gtag_report_conversion(url) {
         if (event.key === 'Escape') {
             closeModal('consultModal');
             closeThankYouPopup();
-        }
-
-        // TRACK CONVERSION HERE - Only when form is valid and being submitted
-    gtag_report_conversion();
-
-    fetch("https://formsubmit.co/ajax/kleeves.official@gmail.com", {
-        method: "POST",
-        headers: {
-            "Accept": "application/json"
-        },
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        form.reset();
-        closeModal('consultModal');
-        document.getElementById("thankYouPopup").style.display = "block";
-        
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    })
-    .catch(error => {
-        alert("Submission failed. Please try again or contact us directly.");
-        console.error('Error:', error);
-        
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    });
-}
-        
+        }    
     });
 
     // Input formatting for numbers
@@ -1234,6 +1205,7 @@ function gtag_report_conversion(url) {
 </body>
 
 </html>
+
 
 
 
