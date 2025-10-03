@@ -11,6 +11,25 @@
 
   gtag('config', 'AW-17620852440');
 </script>
+
+  <!-- Event snippet for Submit lead form conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17620852440/JiUBCL7_qaYbENi9o9JB',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1209,6 +1228,34 @@ JMD Empire Square, MG Road, Sector-28, Gurugram, HR 122001</p>
     });
   }
 
+  // TRACK CONVERSION HERE - Only when form is valid and being submitted
+    gtag_report_conversion();
+
+    fetch("https://formsubmit.co/ajax/kleeves.official@gmail.com", {
+        method: "POST",
+        headers: {
+            "Accept": "application/json"
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        form.reset();
+        closeModal('consultModal');
+        document.getElementById("thankYouPopup").style.display = "block";
+        
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    })
+    .catch(error => {
+        alert("Submission failed. Please try again or contact us directly.");
+        console.error('Error:', error);
+        
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
+}
+
   function closeThankYouPopup() {
     document.getElementById("thankYouPopup").style.display = "none";
   }
@@ -1327,6 +1374,7 @@ calculateEMI();
 
 </body>
 </html>
+
 
 
 
