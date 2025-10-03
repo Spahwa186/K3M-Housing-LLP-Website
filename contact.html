@@ -1168,6 +1168,17 @@ function gtag_report_conversion(url) {
         });
     }
 
+    function closeThankYouPopup() {
+        document.getElementById("thankYouPopup").style.display = "none";
+    }
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal('consultModal');
+            closeThankYouPopup();
+        }
+
         // TRACK CONVERSION HERE - Only when form is valid and being submitted
     gtag_report_conversion();
 
@@ -1195,17 +1206,7 @@ function gtag_report_conversion(url) {
         submitBtn.disabled = false;
     });
 }
-
-    function closeThankYouPopup() {
-        document.getElementById("thankYouPopup").style.display = "none";
-    }
-
-    // Close popup with Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal('consultModal');
-            closeThankYouPopup();
-        }
+        
     });
 
     // Input formatting for numbers
@@ -1233,6 +1234,7 @@ function gtag_report_conversion(url) {
 </body>
 
 </html>
+
 
 
 
