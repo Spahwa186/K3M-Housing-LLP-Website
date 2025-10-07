@@ -561,6 +561,30 @@ function gtag_report_conversion(url) {
     <h1><span style="color: #f3f3ee">All Your Loan Needs,</span> <span style="color: #ffeb3b">Just a Click Away</span></h1>
     <p style="color:#ffffff">Check your eligibility, calculate EMI, and apply online in minutes</p>
     <button class="button" onclick="openModal('consultModal')">Apply Now</button>
+   <br>
+<a href="tel:+918700617454" 
+   style="display: inline-block;
+          background-color: #007bff;
+          color: white;
+          padding: 10px 17px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+          margin-top: 12px;
+          box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+          ">
+   📞 Call Now
+</a>
+<script>
+  // Add hover effect
+  const callBtn = document.querySelector('a[href^="tel:"]');
+  if (callBtn) {
+    callBtn.addEventListener('mouseenter', () => callBtn.style.backgroundColor = '#0056b3');
+    callBtn.addEventListener('mouseleave', () => callBtn.style.backgroundColor = '#007bff');
+  }
+</script>
   </section>
 
   <!-- Your existing modals and content -->
@@ -1346,6 +1370,7 @@ calculateEMI();
 
 </body>
 </html>
+
 
 
 
