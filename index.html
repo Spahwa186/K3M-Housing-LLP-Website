@@ -626,7 +626,7 @@ function gtag_report_conversion(url) {
         </select>
 
         <label for="amount">Loan Amount Required:</label>
-        <input type="text" id="amount" name="amount" />
+        <input type="number" id="amount" name="amount" min="50000" placeholder="Min. 50,000" />
 
         <label for="Profession">Profession:</label>
         <select id="Profession" name="Profession">
@@ -1380,6 +1380,7 @@ calculateEMI();
 
 </body>
 </html>
+
 
 
 
