@@ -1197,6 +1197,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         })
         .then(response => response.json())
         .then(data => {
+
+  // Fire Meta Lead event
+  if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+  }
+           
             form.reset();
             closeModal('consultModal');
             document.getElementById("thankYouPopup").style.display = "block";
