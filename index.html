@@ -1246,6 +1246,12 @@ Paras Trinity, Sector-63, Gurugram, HR 122011</p>
     })
     .then(response => response.json())
     .then(data => {
+
+  // Fire Meta Lead event
+  if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+  }
+     
       form.reset();
       closeModal('consultModal');
       document.getElementById("thankYouPopup").style.display = "block";
