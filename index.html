@@ -576,6 +576,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="button" onclick="openModal('consultModal')">Apply Now</button>
    <br>
 <a href="tel:+919911441301" 
+ id="callBtn"
    style="display: inline-block;
           background-color: #007bff;
           color: white;
@@ -591,11 +592,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    📞 Call Now
 </a>
 <script>
-  // Add hover effect
-  const callBtn = document.querySelector('a[href^="tel:"]');
+  const callBtn = document.getElementById('callBtn');
+
   if (callBtn) {
-    callBtn.addEventListener('mouseenter', () => callBtn.style.backgroundColor = '#0056b3');
-    callBtn.addEventListener('mouseleave', () => callBtn.style.backgroundColor = '#007bff');
+
+    // Hover effect
+    callBtn.addEventListener('mouseenter', () => {
+      callBtn.style.backgroundColor = '#0056b3';
+    });
+
+    callBtn.addEventListener('mouseleave', () => {
+      callBtn.style.backgroundColor = '#007bff';
+    });
+
+    // Meta Contact Event
+    callBtn.addEventListener('click', () => {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Contact');
+      }
+    });
+
   }
 </script>
   </section>
